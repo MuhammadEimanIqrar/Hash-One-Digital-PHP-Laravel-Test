@@ -18,12 +18,12 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="#">
-                            <i class="metismenu-icon"></i>Create
+                        <a href="{{ route('portal.job.create') }}">
+                            <i class="metismenu-icon"></i>Add New
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('portal.job.index') }}">
                             <i class="metismenu-icon"></i>Listing
                         </a>
                     </li>

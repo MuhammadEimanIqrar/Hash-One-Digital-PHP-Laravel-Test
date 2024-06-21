@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\Portal\AuthController;
 use App\Http\Controllers\Portal\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,6 @@ Route::middleware('isSuperAdmin')->group(function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/', [IndexController::class, 'index'])->name('index');
+
+    Route::resource('job', JobController::class);
 });

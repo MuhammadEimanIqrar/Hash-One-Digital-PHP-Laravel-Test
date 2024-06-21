@@ -15,11 +15,13 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/libs/Toastr/css/Toastr@2.1.3.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/libs/Select2/css/select2@4.1.0-rc.0.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/libs/Select2/css/select2@4.1.0-rc.0.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/custom/portal/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/libs/daterangePicker/css/daterangepicker.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/libs/dataTables/css/4.5.2/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/libs/dataTables/css/4.5.2/dataTables.bootstrap4.css')}}">
+    <link href="{{ asset('assets/libs/Toastr/css/Toastr@2.1.3.min.css') }}" rel="stylesheet">
 
     @yield('css')
 </head>
@@ -75,6 +77,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
     {{-- <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script> --}}
     <script type="text/javascript" src="{{ asset('assets/js/jquery-3.7.1.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/custom/script.js') }}"></script>
     <script src="{{ asset('assets/libs/sweetAlert2/sweetalert2@11.min.js') }}"></script>
     <script src="{{ asset('assets/libs/Toastr/js/Toastr@2.1.3.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/custom/notify.js') }}"></script>
@@ -84,7 +87,15 @@
     <script type="text/javascript" src="{{ asset('assets/libs/daterangePicker/js/daterangepicker.js') }}"></script>
     {{-- Date Range Picker Links End --}}
 
+    {{-- DataTabeles --}}
+    <script src="{{asset('assets/libs/dataTables/js/4.5.2/popper.min.js')}}"></script>
+    <script src="{{asset('assets/libs/dataTables/js/4.5.2/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/libs/dataTables/js/4.5.2/dataTables.js')}}"></script>
+    <script src="{{asset('assets/libs/dataTables/js/4.5.2/dataTables.bootstrap4.js')}}"></script>
+
     <x-notify />
+
+    @stack('scripts')
 
     <script type="text/javascript">
         // In your Javascript (external .js resource or <script> tag)

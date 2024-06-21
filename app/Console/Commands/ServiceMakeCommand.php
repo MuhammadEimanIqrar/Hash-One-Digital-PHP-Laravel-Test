@@ -30,7 +30,8 @@ class ServiceMakeCommand extends Command
         $hierarchy = str_replace('\\', '/', $this->argument('name'));
 
         $className = $this->getClassName($hierarchy);
-        $hierarchy = $this->replaceWordFromEnd($hierarchy, '/' . $className, '');
+        $hierarchy = $this->replaceWordFromEnd($hierarchy, $className, '');
+        $hierarchy = $this->replaceWordFromEnd($hierarchy, '/', '');
 
         $className = ucwords($className) . 'Service';
         $fileName = app_path('Services/' . $hierarchy . '/' . $className . '.php');
