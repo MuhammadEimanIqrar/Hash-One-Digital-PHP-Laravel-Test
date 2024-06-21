@@ -16,7 +16,7 @@ class JobService
 
     public function getAllJobs()
     {
-        return $this->model->all();
+        return $this->model->all()->load(['requirements', 'user', 'applications']);
     }
 
     public function getJobById($id)

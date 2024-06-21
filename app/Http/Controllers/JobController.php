@@ -125,6 +125,22 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        try {
+            DB::beginTransaction();
+
+            $response = $this->service->deleteJob($job->id);
+
+            if ($response) {
+                DB::commit();
+
+                return redirect()->route('portal.job.index')->with(successType(), 'Job deleted successfully');
+            }
+
+            DB::rollBack();
+            return back()->with(errorType(), defaultErrorMessage());
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return back()->with(errorType(), errorMessage($th));
+        }
     }
 }
